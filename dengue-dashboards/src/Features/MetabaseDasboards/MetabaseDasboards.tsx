@@ -5,16 +5,18 @@ const MetabaseDashboard = () => {
     const [iframeUrl, setIframeUrl] = useState('');
     const [isDashboardOn, setIsDashboardOn] = useState(false);
 
+
     useEffect(() => {
-        axios.get('http://localhost:3001/metabase')
+        axios.get('http://localhost:3001/api/metabase')
             .then(response => {
-                setIframeUrl(response.data.iframeUrl); // Correctly access the iframeUrl
+                setIframeUrl(response.data.iframeUrl);
                 setIsDashboardOn(true);
             })
             .catch(error => {
                 console.error('Error fetching Metabase dashboard URL', error);
             });
-    }, []); // Removed the dependency on 'shitOk'
+    }, []);
+
 
     return (
         <div>
@@ -24,11 +26,11 @@ const MetabaseDashboard = () => {
                     frameBorder="0"
                     width="800"
                     height="600"
-                    
                 ></iframe>
             ) : (
                 <p>Loading dashboard...</p>
             )}
+
         </div>
     );
 };

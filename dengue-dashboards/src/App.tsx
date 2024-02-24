@@ -1,16 +1,17 @@
 import NavBar from "./Components/NavBar/NavBar"
-import MetabaseDashboard from "./Features/MetabaseDasboards/MetabaseDasboards"
+import MetabaseOutput from "./Features/MetabaseDasboards/MetabaseOutput"
+
 
 export default function App() {
-  
+
   return (
     <div>
       <div>
         <NavBar />
       </div>
-      <div style={{display: "flex", justifyContent: "center", alignContent: "center"}}>
-        
-        <MetabaseDashboard/>
+      <div style={{ display: "flex", justifyContent: "center", alignContent: "center" }}>
+        <MetabaseOutput />
+
       </div>
     </div>
   )
