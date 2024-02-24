@@ -8,7 +8,7 @@ validateEnvVariables();
 export function getMetabaseEmbedding(req: Request, res: Response) {
     try {
         const payload = {
-            resource: { dashboard: 1 },
+            resource: { dashboard: 2 },
             params: {},
             exp: Math.round(Date.now() / 1000) + (10 * 60),
         };
