@@ -5,6 +5,8 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <div style={{border: "1px solid purple", margin: "0px"}}>
+      <App />
+    </div>
   </React.StrictMode>,
 )
