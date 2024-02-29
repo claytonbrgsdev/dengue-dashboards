@@ -1,17 +1,12 @@
-import NavBar from "./Components/NavBar/NavBar"
-import MetabaseOutput from "./Features/MetabaseDasboards/MetabaseOutput"
-
-
+import ButtonAppBar from "./Core/AppNavBar/NavBar"
+import { Outlet } from "react-router-dom"
 export default function App() {
 
   return (
     <div>
-      <div>
-        <NavBar />
-      </div>
+      <ButtonAppBar />
       <div style={{ display: "flex", justifyContent: "center", alignContent: "center" }}>
-        <MetabaseOutput />
-
+        <Outlet />
       </div>
     </div>
   )

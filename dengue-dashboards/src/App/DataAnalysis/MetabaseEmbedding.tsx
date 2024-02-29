@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const MetabaseDashboard = () => {
+const MetabaseEmbedding = () => {
     const [iframeUrl, setIframeUrl] = useState('');
     const [isDashboardOn, setIsDashboardOn] = useState(false);
 
@@ -35,4 +35,4 @@ const MetabaseDashboard = () => {
     );
 };
 
-export default MetabaseDashboard;
+export default MetabaseEmbedding;

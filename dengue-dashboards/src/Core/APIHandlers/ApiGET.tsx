@@ -1,10 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
 
-const DatabaseApiFetch = () => {
+
+type Source = {
+    url: string
+}
+const ApiGET = ({ url }: Source) => {
     const [data, setData] = useState('');
+    const source = url
     const fetchData = () => {
-        axios.get('http://localhost:3001/api/data-service')
+        axios.get(source)
             .then(response => {
                 console.log(response.data);
                 setData(response.data); // Save the data in state
@@ -22,4 +27,4 @@ const DatabaseApiFetch = () => {
     );
 };
 
-export default DatabaseApiFetch;
+export default ApiGET;
