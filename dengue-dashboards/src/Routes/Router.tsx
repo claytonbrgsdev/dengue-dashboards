@@ -1,27 +1,30 @@
-import { createBrowserRouter } from "react-router-dom"
+import { createBrowserRouter } from "react-router-dom";
 import Error from "../Pages/ErrorPage/Error";
 import App from "../App";
 import LandingPage from "../Pages/LandingPage/LandingPage";
+import MetabaseDashboards from "../App/DataAnalysis/MetabaseDashboards";
 
 export const router = createBrowserRouter([
-    {
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <Error />,
+    children: [
+      {
         path: '/',
-        element: <App />,
-        errorElement: <Error />,
-        
-        
+        element: <LandingPage />,
         children: [
-            {
-                path: '/home', 
-                index: true,
-                element: <LandingPage/>,
-                errorElement: <Error/>
-            },
-            {
-                path: '/error', 
-                errorElement: <Error/>
-            }
-        ]
-    },
-
+          {
+            path: 'metabase-dashboards',
+            element: <MetabaseDashboards />,
+            errorElement: <Error />,
+          },
+        ],
+      },
+      {
+        path: '/error',
+        errorElement: <Error />,
+      },
+    ],
+  },
 ]);

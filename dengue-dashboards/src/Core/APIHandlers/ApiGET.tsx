@@ -12,7 +12,7 @@ const ApiGET = ({ url }: Source) => {
         axios.get(source)
             .then(response => {
                 console.log(response.data);
-                setData(response.data); // Save the data in state
+                setData(response.data); 
             })
             .catch(error => {
                 console.error('Error fetching data from service', error);
@@ -21,7 +21,6 @@ const ApiGET = ({ url }: Source) => {
     return (
         <div>
             <button onClick={fetchData}>Fetch Data</button>
-            {/* Display data or a message */}
             <div>{data ? <h2>data fetched!</h2> : <p>No data fetched yet</p>}</div> 
         </div>
     );
